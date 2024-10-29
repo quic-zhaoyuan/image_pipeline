@@ -1141,7 +1141,7 @@ class StereoCalibrator(Calibrator):
 
         if self.camera_model == CAMERA_MODEL.PINHOLE:
             print("stereo pinhole calibration...")
-            if VersionInfo.parse(cv2.__version__).major < 3:
+            LooseVersion(cv2.__version__).version[0] == 2:
                 ret_values = cv2.stereoCalibrate(opts, lipts, ripts, self.size,
                                                  self.l.intrinsics, self.l.distortion,
                                                  self.r.intrinsics, self.r.distortion,
