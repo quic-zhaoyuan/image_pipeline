@@ -171,7 +171,8 @@ DisparityNode::DisparityNode(const rclcpp::NodeOptions & options)
   bool approx = this->declare_parameter("approximate_sync", false);
   double approx_sync_epsilon = this->declare_parameter("approximate_sync_tolerance_seconds", 0.0);
   this->declare_parameter("use_system_default_qos", false);
-  use_image_transport_camera_info = this->declare_parameter("use_image_transport_camera_info", true);
+  use_image_transport_camera_info = this->declare_parameter("use_image_transport_camera_info",
+      true);
 
   // Synchronize callbacks
   if (approx) {
